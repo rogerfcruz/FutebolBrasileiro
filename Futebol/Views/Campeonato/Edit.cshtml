@@ -1,0 +1,47 @@
+﻿@model Futebol.Models.CampeonatoModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Campeonato</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.Nome" class="control-label">Nome</label>
+                <input asp-for="@Model.Nome" class="form-control" placeholder="Informe o nome do campeonato" />
+                <span asp-validation-for="@Model.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.DataInicio" class="control-label">Data Início</label>
+                <input asp-for="@Model.DataInicio" class="form-control" placeholder="Informe a data início" />
+                <span asp-validation-for="@Model.DataInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.DataFim" class="control-label">Data Fim</label>
+                <input asp-for="@Model.DataFim" class="form-control" placeholder="Informe a data fim" />
+                <span asp-validation-for="@Model.DataFim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Tipo" class="control-label">Tipo do Campeonato</label>
+                <input asp-for="@Model.Tipo" class="form-control" placeholder="Informe o tipo do campeonato" />
+                <span asp-validation-for="@Model.Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Valor" class="control-label">Valor do Campeonato</label>
+                <input asp-for="@Model.Valor" class="form-control" placeholder="Informe o valor do campeonato" />
+                <span asp-validation-for="@Model.Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a class="btn btn-default" asp-controller="Campeonato" asp-action="Index" role="button">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
