@@ -1,0 +1,47 @@
+﻿@model Futebol.Models.TimeModel
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Time</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.Nome" class="control-label">Nome</label>
+                <input asp-for="@Model.Nome" class="form-control" placeholder="Informe o nome do time" />
+                <span asp-validation-for="@Model.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Estado" class="control-label">Data Início</label>
+                <input asp-for="@Model.Estado" class="form-control" placeholder="Informe estado do time" />
+                <span asp-validation-for="@Model.Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Cidade" class="control-label">Data Fim</label>
+                <input asp-for="@Model.Cidade" class="form-control" placeholder="Informe a cidade do time" />
+                <span asp-validation-for="@Model.Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.DataFundacao" class="control-label">Tipo do Campeonato</label>
+                <input asp-for="@Model.DataFundacao" class="form-control" placeholder="Informe a data de fundação" />
+                <span asp-validation-for="@Model.DataFundacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.NomeEstadio" class="control-label">Valor do Campeonato</label>
+                <input asp-for="@Model.NomeEstadio" class="form-control" placeholder="Informe o nome do estádio" />
+                <span asp-validation-for="@Model.NomeEstadio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a class="btn btn-default" asp-controller="Time" asp-action="Index" role="button">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

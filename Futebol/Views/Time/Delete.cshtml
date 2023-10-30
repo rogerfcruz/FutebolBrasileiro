@@ -1,0 +1,50 @@
+﻿@model Futebol.Models.TimeModel
+
+@{
+    ViewData["Title"] = "Apagar";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h3>Deseja realmente apagar o time?</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataFundacao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataFundacao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeEstadio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NomeEstadio)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-default" asp-controller="Time" asp-action="Index" role="button">Cancelar</a>
+    </form>
+</div>

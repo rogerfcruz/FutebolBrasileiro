@@ -1,0 +1,46 @@
+﻿@model Futebol.Models.ViewModels.TimeFormViewModel
+
+@{
+    ViewData["Title"] = "Criar Novo";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Time</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Time.Nome" class="control-label">Nome</label>
+                <input asp-for="Time.Nome" class="form-control" />
+                <span asp-validation-for="Time.Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time.Estado" class="control-label">Estado</label>
+                <input asp-for="Time.Estado" class="form-control" />
+                <span asp-validation-for="Time.Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time.Cidade" class="control-label">Cidade</label>
+                <input asp-for="Time.Cidade" class="form-control" />
+                <span asp-validation-for="Time.Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time.DataFundacao" class="control-label">Data de Fundação</label>
+                <input asp-for="Time.DataFundacao" class="form-control" />
+                <span asp-validation-for="Time.DataFundacao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time.NomeEstadio" class="control-label">Nome do Estádio</label>
+                <input asp-for="Time.NomeEstadio" class="form-control" />
+                <span asp-validation-for="Time.NomeEstadio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+                <a class="btn btn-default" asp-controller="Time" asp-action="Index" role="button">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>

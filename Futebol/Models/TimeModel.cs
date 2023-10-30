@@ -19,7 +19,7 @@ namespace Futebol.Models
         [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} tamanho deve ser entre {2} e {1}.")]
         public string Cidade { get; set;}
 
-        [Display(Name = "Data Fundação")]
+        [Display(Name = "Data de Fundação")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [Required(ErrorMessage = "{0} obrigatório")]

@@ -9,5 +9,6 @@ namespace Futebol.Data
         {            
         }
         public DbSet<CampeonatoModel> Campeonato { get; set; }
+        public DbSet<TimeModel> Time { get; set; }
     }
 }
