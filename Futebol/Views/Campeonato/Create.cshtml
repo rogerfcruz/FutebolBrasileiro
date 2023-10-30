@@ -1,4 +1,4 @@
-﻿@model Futebol.Models.CampeonatoModel
+﻿@model Futebol.Models.ViewModels.CampeonatoFormViewModel
 
 @{
     ViewData["Title"] = "Criar Novo";
@@ -13,29 +13,29 @@
         <form asp-action="Create">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="@Model.Nome" class="control-label">Nome</label>
-                <input asp-for="@Model.Nome" class="form-control" />
-                <span asp-validation-for="@Model.Nome" class="text-danger"></span>
+                <label asp-for="Campeonato.Nome" class="control-label">Nome</label>
+                <input asp-for="Campeonato.Nome" class="form-control" />
+                <span asp-validation-for="Campeonato.Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.DataInicio" class="control-label">Data Início</label>
-                <input asp-for="@Model.DataInicio" class="form-control" />
-                <span asp-validation-for="@Model.DataInicio" class="text-danger"></span>
+                <label asp-for="Campeonato.DataInicio" class="control-label">Data Início</label>
+                <input asp-for="Campeonato.DataInicio" class="form-control" />
+                <span asp-validation-for="Campeonato.DataInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.DataFim" class="control-label">Data Fim</label>
-                <input asp-for="@Model.DataFim" class="form-control" />
-                <span asp-validation-for="@Model.DataFim" class="text-danger"></span>
+                <label asp-for="Campeonato.DataFim" class="control-label">Data Fim</label>
+                <input asp-for="Campeonato.DataFim" class="form-control" />
+                <span asp-validation-for="Campeonato.DataFim" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Tipo" class="control-label">Tipo do Campeonato</label>
-                <input asp-for="@Model.Tipo" class="form-control" />
-                <span asp-validation-for="@Model.Tipo" class="text-danger"></span>
+                <label asp-for="Campeonato.Tipo" class="control-label">Tipo do Campeonato</label>
+                <input asp-for="Campeonato.Tipo" class="form-control" />
+                <span asp-validation-for="Campeonato.Tipo" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="@Model.Valor" class="control-label">Valor do Campeonato</label>
-                <input asp-for="@Model.Valor" class="form-control" />
-                <span asp-validation-for="@Model.Valor" class="text-danger"></span>
+                <label asp-for="Campeonato.Valor" class="control-label">Valor do Campeonato</label>
+                <input asp-for="Campeonato.Valor" class="form-control" />
+                <span asp-validation-for="Campeonato.Valor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-default" />

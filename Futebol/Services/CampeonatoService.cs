@@ -1,6 +1,7 @@
 ﻿using Futebol.Data;
 using Futebol.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -29,14 +30,33 @@ namespace Futebol.Services
         }
         public void Remove(int id)
         {
-            var obj = _context.Campeonato.Find(id);
-            _context.Campeonato.Remove(obj);
-            _context.SaveChanges();
+            try
+            {
+                var obj = _context.Campeonato.Find(id);
+                _context.Campeonato.Remove(obj);
+                _context.SaveChanges();
+            }
+            catch (ApplicationException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
         }
         public void Update(CampeonatoModel obj)
         {
-            _context.Update(obj);
-            _context.SaveChanges();
+            if (!_context.Campeonato.Any(x => x.Id == obj.Id))
+            {
+                throw new ApplicationException("Id não encontrado!");
+            }
+
+            try
+            {
+                _context.Update(obj);
+                _context.SaveChanges();
+            }
+            catch (ApplicationException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
         }
     }
 }
